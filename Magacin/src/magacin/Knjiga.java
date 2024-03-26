@@ -1,5 +1,5 @@
 package magacin;
 
-public class Knjiga {
+public class Knjiga extends Artikal {
 
 }
