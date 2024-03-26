@@ -24,6 +24,10 @@ public abstract class Artikal {
 	}
 
 	public void setNaziv(String naziv) {
+		if(naziv==null)
+			throw new NullPointerException("Naziv ne sme biti null");
+		if(naziv.isEmpty())
+			throw new IllegalArgumentException("Naziv ne sme biti prazan");
 		this.naziv = naziv;
 	}
 
@@ -32,6 +36,8 @@ public abstract class Artikal {
 	}
 
 	public void setSifra(int sifra) {
+		if(sifra<=0)
+			throw new IllegalArgumentException("Sifra mora biti pozitivan broj");
 		this.sifra = sifra;
 	}
 
@@ -40,6 +46,8 @@ public abstract class Artikal {
 	}
 
 	public void setKolicina(int kolicina) {
+		if(kolicina<=0)
+			throw new IllegalArgumentException("Kolicina mora biti pozitivan broj");
 		this.kolicina = kolicina;
 	}
 
@@ -48,6 +56,10 @@ public abstract class Artikal {
 	}
 
 	public void setOpis(String opis) {
+		if(opis==null)
+			throw new NullPointerException("Opis ne sme biti null");
+		if(opis.isEmpty())
+			throw new IllegalArgumentException("Opis ne sme biti prazan");
 		this.opis = opis;
 	}
 
