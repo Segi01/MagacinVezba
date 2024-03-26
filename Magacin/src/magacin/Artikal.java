@@ -1,5 +1,7 @@
 package magacin;
 
+import java.util.Objects;
+
 public abstract class Artikal {
 	
 	private String naziv;
@@ -61,6 +63,23 @@ public abstract class Artikal {
 		if(opis.isEmpty())
 			throw new IllegalArgumentException("Opis ne sme biti prazan");
 		this.opis = opis;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(sifra);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Artikal other = (Artikal) obj;
+		return sifra == other.sifra;
 	}
 
 	@Override
